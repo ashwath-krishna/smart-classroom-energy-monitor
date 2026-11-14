@@ -1,0 +1,34 @@
+# Experimental Methodology
+
+## Comparison
+
+Compare:
+1. PIR-only occupancy decisions
+2. Proposed dual-sensor decisions using mmWave and PIR
+
+Use the same room, sensor placement conditions where practical, and test scenarios for both approaches. Record configuration changes so the comparison is reproducible.
+
+## Planned scenarios
+
+- Person sitting still, reading, or writing
+- Person entering and leaving the room
+- Empty room while a fan is running
+- Occupants at different distances from the sensors
+
+## Ground truth
+
+Record actual room occupancy through direct observation during each trial. Use a consistent recording sheet with timestamps, observed occupancy, sensor outputs, system state, and relevant environmental conditions.
+
+## Procedure outline
+
+1. Document the room, sensor positions, module models, and settings.
+2. Define the test duration and vacancy timeout before testing.
+3. Run each scenario using PIR-only logic.
+4. Repeat the same scenarios using dual-sensor logic.
+5. Record false-vacancy and false-occupancy events and vacancy-declaration times.
+6. If energy comparison is included, document appliance ratings, assumed or confirmed ON durations, tariff, and the independent reference method.
+7. Repeat trials where practical and report the number of trials.
+
+## Reporting
+
+Publish raw observations or a clearly described summary, sample counts, test conditions, and limitations. Do not claim an improvement unless the collected results support it.
