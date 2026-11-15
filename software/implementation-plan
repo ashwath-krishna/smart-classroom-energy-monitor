@@ -1,0 +1,40 @@
+# Software Implementation Plan
+
+## ESP32 firmware — proposed responsibilities
+
+- Initialize the selected mmWave and PIR modules.
+- Read and filter sensor signals.
+- Apply the documented Occupied / Uncertain / Vacant decision logic.
+- Track inactivity duration and vacancy timeout.
+- Send readings and status to the Python dashboard over Wi-Fi.
+
+## Python dashboard — proposed responsibilities
+
+- Receive and display sensor states.
+- Display the combined occupancy state.
+- Display inactivity duration.
+- Accept or obtain appliance power and ON-duration inputs.
+- Calculate and display estimated energy use and potential savings.
+- Clearly label calculated values as estimates, not meter readings.
+
+## Energy calculations
+
+For an appliance with rated power \(P\) watts operating for \(t\) hours:
+
+\[
+E_{\mathrm{kWh}} = \frac{P \times t}{1000}
+\]
+
+For an electricity tariff \(R\) per kWh:
+
+\[
+\mathrm{Estimated\ cost} = E_{\mathrm{kWh}} \times R
+\]
+
+If comparing a baseline and a proposed-control case:
+
+\[
+\mathrm{Potential\ saving} = E_{\mathrm{baseline}} - E_{\mathrm{controlled}}
+\]
+
+The calculations require valid appliance power ratings, operating durations, and tariff inputs. Actual ON-state confirmation is still to be decided.
